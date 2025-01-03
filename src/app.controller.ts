@@ -6,7 +6,7 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) { }
 
-  @Get('/health-check')
+  @Get('health')
   @HttpCode(200)
   healthCheck(@Res() res: Response) {
     const msg = this.appService.healthCheck();
