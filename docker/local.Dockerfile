@@ -10,6 +10,8 @@ COPY package*.json ./
 # Install the application dependencies
 RUN npm install
 
+ENV NODE_ENV=local
+
 # Copy the rest of the application files
 COPY ../ .
 
