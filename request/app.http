@@ -1,0 +1,6 @@
+# @name GetAbnormalTransactions
+GET {{API_URL}}/health-check
+accept: application/json
+content-type: application/json
+
+### END
