@@ -4,11 +4,11 @@ import { Response } from 'express';
 
 @Controller('ticket-api')
 export class TicketApiController {
-  constructor(private readonly ticketApiUsecase: TicketApiUsecase) { }
+  constructor(private readonly ticketApiUsecase: TicketApiUsecase) {}
 
   @Get('health')
-  health(@Res() res: Response) {
-    const result = this.ticketApiUsecase.health();
+  async health(@Res() res: Response) {
+    const result = await this.ticketApiUsecase.health();
     res.status(result.statusCode).json(result);
   }
 }
