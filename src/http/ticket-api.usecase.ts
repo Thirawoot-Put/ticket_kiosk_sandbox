@@ -8,6 +8,6 @@ export class TicketApiUsecase {
 
   health() {
     const res = this.ticketService.health();
-    return { code: HttpStatusCode.Ok, message: 'success', data: res };
+    return { statusCode: HttpStatusCode.Ok, message: 'success', data: res };
   }
 }

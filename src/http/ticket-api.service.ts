@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { TicketApiRepository } from './ticket-api.repository';
 
 @Injectable()
@@ -8,7 +8,7 @@ export class TicketApiService {
   health() {
     this.ticketApiReposetory.health().catch((e) => {
       console.error(e);
-      throw e;
+      throw new InternalServerErrorException(e);
     });
     return `healthy`;
   }
