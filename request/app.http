@@ -1,5 +1,12 @@
 # @name GetAbnormalTransactions
-GET {{API_URL}}/health-check
+GET {{API_URL}}/health
+accept: application/json
+content-type: application/json
+
+### END
+
+# @name HealthCheckTicketApi
+GET {{API_URL}}/ticket-api/health
 accept: application/json
 content-type: application/json
 
